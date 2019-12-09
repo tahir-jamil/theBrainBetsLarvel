@@ -13,7 +13,7 @@ class Predictions extends Model
      * @var array
      */
     protected $fillable = [
-        'id','match_id','user_id','1x2','1x2ht','ou05','ou15','ou05ht','ou15ht','ggng','double_change','status_id',
+        'id','match_id','Match','user_id','1x2','1x2ht','ou05','ou15','ou05ht','ou15ht','ggng','double_change','status_id',
     ];
 
     /**
@@ -23,3 +23,19 @@ class Predictions extends Model
      */
     protected $hidden = [];
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

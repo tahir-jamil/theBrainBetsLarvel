@@ -13,11 +13,16 @@ class Matches extends Model
      * @var array
      */
     protected $fillable = [
-        'id','game','datetime','sport_id','champion_id','v1','x','v2','v1ht','vht','v2ht','o05','u05','o15','u15','o25','u25','o05ht','u05ht','o15ht','u15ht','gg','ng','v1x','x2','v12','result',
+        'id','Match','Datetime','Sport','Champion','1','X','2','GG','NG','U05','O05','U15','O15','U25','O25','1X','X2','12','1HT','XHT','2HT','U05HT','O05HT','U15HT','O15HT',
     ];
 
+
+
+    
+
+
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes excluded from the model s JSON form.
      *
      * @var array
      */

@@ -17,7 +17,7 @@ class CreatePredictionsTable extends Migration
             $table->increments('id');
             $table->string('match_id');
             $table->string('user_id');
-            $table->string('game');
+            $table->string('Match');
             $table->string('1x2');
             $table->string('1x2ht');
             $table->string('ou05');
