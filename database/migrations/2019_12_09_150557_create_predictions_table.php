@@ -26,6 +26,7 @@ class CreatePredictionsTable extends Migration
             $table->string('ou05ht');
             $table->string('ou15ht');
             $table->string('ggng');
+            $table->string('result');
             $table->string('double_change');
             $table->string('status_id');
             $table->timestamps();
