@@ -24,11 +24,12 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     
     $router->post('post_matches',  ['uses' => 'HomeController@post_matches']);
     $router->post('post_predictions',  ['uses' => 'HomeController@post_predictions']);
-    $router->post('post_nations',  ['uses' => 'HomeController@post_nations']);
-    $router->post('post_sports',  ['uses' => 'HomeController@post_sports']);
-    $router->post('post_champions',  ['uses' => 'HomeController@post_champions']);
+    $router->post('post_nation',  ['uses' => 'HomeController@post_nation']);
+    $router->post('post_sport',  ['uses' => 'HomeController@post_sport']);
+    $router->post('post_champion',  ['uses' => 'HomeController@post_champion']);
     
     $router->post('update_predictions',  ['uses' => 'HomeController@update_predictions']);
+    $router->post('update_sport',  ['uses' => 'HomeController@update_sport']);
     // $router->get('authors/{id}', ['uses' => 'AuthorController@showOneAuthor']);
     // $router->post('authors', ['uses' => 'AuthorController@create']);
     // $router->delete('authors/{id}', ['uses' => 'AuthorController@delete']);

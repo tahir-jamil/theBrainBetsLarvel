@@ -22,6 +22,7 @@ class CreatePredictionsTable extends Migration
             $table->string('1x2ht');
             $table->string('ou05');
             $table->string('ou15');
+            $table->string('ou25');
             $table->string('ou05ht');
             $table->string('ou15ht');
             $table->string('ggng');
@@ -31,7 +32,7 @@ class CreatePredictionsTable extends Migration
         });
     }
 
-    /**
+    /**`
      * Reverse the migrations.
      *
      * @return void

@@ -15,6 +15,10 @@ class CreateChampionsTable extends Migration
     {
         Schema::create('champions', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('name');
+            $table->string('sign');
+            $table->string('nation_id');
+            $table->string('isActive');
             $table->timestamps();
         });
     }
