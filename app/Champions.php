@@ -13,7 +13,7 @@ class Champions extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'github', 'twitter', 'location', 'latest_article_published'
+        'name', 'sign', 'nation_id', 'isActive',
     ];
 
     /**
