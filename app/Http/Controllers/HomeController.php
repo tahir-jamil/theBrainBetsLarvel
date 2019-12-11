@@ -8,9 +8,46 @@ use App\Nations;
 use App\Champions;
 use App\Sports;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
+    // search
+    public function search(Request $filters) {
+
+        $result =  DB::table('predictions')->join('matches', 'predictions.match_id', '=', 'matches.id');
+        
+        if ($filters->input('champion')) {
+            $result->where('Champion','=', $filters->input('champion'));
+        }
+
+        if ($filters->has('sport')) {
+            $result->where('Sport','=', $filters->input('sport'));
+        }
+
+        if (($filters->input('kindOfPrediction')) && ($filters->input('minQuote'))) {
+            $result->where($filters->input('kindOfPrediction'),'>=', $filters->input('minQuote'));
+        }
+
+        if (($filters->input('kindOfPrediction')) && ($filters->input('maxQuote'))) {
+            $result->where($filters->input('kindOfPrediction'),'<=', $filters->input('maxQuote'));
+        }
+        
+        $result->select('predictions.*',  'matches.Champion', 'matches.Sport');
+
+        if ($filters->input('numberOfMatches')) {
+            $result->limit($filters->input('numberOfMatches'));
+            return response()->json($result->get());
+        } else {   
+            return response()->json($result->get());
+        }
+       
+        
+      
+
+        // // Get the results and return them.
+
+    }
 
     public function get_matches() {
         // 

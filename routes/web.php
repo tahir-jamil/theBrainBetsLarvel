@@ -30,6 +30,7 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     
     $router->post('update_predictions',  ['uses' => 'HomeController@update_predictions']);
     $router->post('update_sport',  ['uses' => 'HomeController@update_sport']);
+    $router->post('search',  ['uses' => 'HomeController@search']);
     // $router->get('authors/{id}', ['uses' => 'AuthorController@showOneAuthor']);
     // $router->post('authors', ['uses' => 'AuthorController@create']);
     // $router->delete('authors/{id}', ['uses' => 'AuthorController@delete']);
