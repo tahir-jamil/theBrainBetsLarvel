@@ -16,12 +16,13 @@ class HomeController extends Controller
     public function search(Request $filters) {
 
         $result =  DB::table('predictions')->join('matches', 'predictions.match_id', '=', 'matches.id');
+        $result->select('predictions.*',  'matches.Champion', 'matches.Sport');
         
         if ($filters->input('champion')) {
             $result->where('Champion','=', $filters->input('champion'));
         }
 
-        if ($filters->has('sport')) {
+        if ($filters->input('sport')) {
             $result->where('Sport','=', $filters->input('sport'));
         }
 
@@ -33,7 +34,6 @@ class HomeController extends Controller
             $result->where($filters->input('kindOfPrediction'),'<=', $filters->input('maxQuote'));
         }
         
-        $result->select('predictions.*',  'matches.Champion', 'matches.Sport');
 
         if ($filters->input('numberOfMatches')) {
             $result->limit($filters->input('numberOfMatches'));
