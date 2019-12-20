@@ -137,6 +137,16 @@ class HomeController extends Controller
 
         return response()->json($prediction, 200);
     }
+
+    public function login(Request $request)
+    {
+        $result =  DB::table('users');
+        $result->select('users.*');
+        $result->where('email','=', $request->input('email'));
+        $result->where('password','=', $request->input('password'));
+
+        return response()->json($result->get());
+    }
   
     // public function delete($id)
     // {

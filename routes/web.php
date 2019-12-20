@@ -22,6 +22,8 @@ $router->group(['prefix' => 'api'], function () use ($router) {
     $router->get('get_sports',  ['uses' => 'HomeController@get_sports']);
     $router->get('get_champions',  ['uses' => 'HomeController@get_champions']);
     
+    $router->post('login',  ['uses' => 'HomeController@login']);
+
     $router->post('post_matches',  ['uses' => 'HomeController@post_matches']);
     $router->post('post_predictions',  ['uses' => 'HomeController@post_predictions']);
     $router->post('post_nation',  ['uses' => 'HomeController@post_nation']);
