@@ -7,6 +7,7 @@ use App\Predictions;
 use App\Nations;
 use App\Champions;
 use App\Sports;
+use App\Users;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -41,9 +42,6 @@ class HomeController extends Controller
         } else {   
             return response()->json($result->get());
         }
-       
-        
-      
 
         // // Get the results and return them.
 
@@ -64,6 +62,13 @@ class HomeController extends Controller
         $matches = Matches::create($request->all());
 
         return response()->json($matches, 201);
+    }
+
+    public function register(Request $request)
+    {
+        $users = Users::create($request->all());
+
+        return response()->json($users, 201);
     }
 
 
@@ -122,6 +127,7 @@ class HomeController extends Controller
         // Matches::all()
         return response()->json(Predictions::all());
     }
+
 
     public function post_predictions(Request $request)
     {
